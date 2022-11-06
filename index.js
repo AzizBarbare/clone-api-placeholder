@@ -1,9 +1,12 @@
 // const express = require('express')
+import dotenv from 'dotenv'
 import express from 'express'
 import { Database } from './src/commun/database.js';
 
 import { route as UserRouter } from './src/users/index.js';
-const port = 3000;
+
+dotenv.config();
+const port =process.env.PORT || 3000;
 const database = new Database();
 const app = express()
 
